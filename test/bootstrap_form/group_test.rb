@@ -1,13 +1,13 @@
 require 'minitest/autorun'
 require 'bootstrap_form'
 
-class BootstrapForm::GroupTest < Minitest::Test
+class BootstrapForm::GroupTest < Minitest::Unit::TestCase
   def dont_care
     nil
   end
 
   def test_errors_delegates_to_builder
-    builder = MiniTest::Mock.new
+    builder = Minitest::Mock.new
     builder.expect :errors, dont_care, [:attr, {key: 'value'}]
     group = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
 
@@ -17,7 +17,7 @@ class BootstrapForm::GroupTest < Minitest::Test
   end
 
   def test_label_delegates_to_builder
-    builder = MiniTest::Mock.new
+    builder = Minitest::Mock.new
     builder.expect :label, dont_care, [:attr, {key: 'value'}]
     group = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
 
@@ -27,7 +27,7 @@ class BootstrapForm::GroupTest < Minitest::Test
   end
 
   def test_text_area_delegates_to_builder
-    builder = MiniTest::Mock.new
+    builder = Minitest::Mock.new
     builder.expect :text_area, dont_care, [:attr, {key: 'value'}]
     group = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
 
@@ -37,7 +37,7 @@ class BootstrapForm::GroupTest < Minitest::Test
   end
 
   def test_text_field_delegates_to_builder
-    builder = MiniTest::Mock.new
+    builder = Minitest::Mock.new
     builder.expect :text_field, dont_care, [:attr, {key: 'value'}]
     group   = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
 
@@ -47,9 +47,9 @@ class BootstrapForm::GroupTest < Minitest::Test
   end
 
   def test_hint_is_span_with_translation
-    template = MiniTest::Mock.new
+    template = Minitest::Mock.new
     template.expect :content_tag, dont_care, [:span, 'translation missing: en.bootstrap.hints.object.attr', class: 'help-block']
-    builder = MiniTest::Mock.new
+    builder = Minitest::Mock.new
     builder.expect :object, Object.new
     group    = BootstrapForm::Group.new builder: builder, method: :attr, template: template
 
@@ -59,7 +59,7 @@ class BootstrapForm::GroupTest < Minitest::Test
   end
 
   def test_value_delegates_to_builder
-    object = MiniTest::Mock.new
+    object = Minitest::Mock.new
     object.expect :send, dont_care, [:attr]
     builder = Minitest::Mock.new
     builder.expect :object, object
