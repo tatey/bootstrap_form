@@ -1,8 +1,12 @@
 # BootstrapForm
 
-A very simple form builder for rails that renders inline errors. You have
-complete control over the markup with the familiar form builder DSL. This
-library has been extracted from the [Tug](https://tugapp.com) project.
+A very simple form builder for rails that makes few assumptions about your markup.
+
+1. You want to wrap inputs in a group
+2. You want to render inline errors
+3. You like Bootstrap
+
+This library has been extracted from the [Tug](https://tugapp.com) project.
 
 ## Installation
 
