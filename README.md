@@ -47,6 +47,16 @@ The following HTML is rendered is if the form has errors:
       </fieldset>
     </form>
 
+## Changelog
+
+### 2014-02-02
+
+* Add `Group#number_field`
+
+### 2014-01-21
+
+* Initial release
+
 ## Contributing
 
 1. Fork it (https://github.com/tatey/bootstrap_form/fork)
