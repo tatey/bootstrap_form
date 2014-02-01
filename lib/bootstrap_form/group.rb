@@ -17,6 +17,10 @@ class BootstrapForm::Group
     builder.label method, *args
   end
 
+  def number_field *args
+    builder.number_field method, *args
+  end
+
   def text_area *args
     builder.text_area method, *args
   end

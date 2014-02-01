@@ -26,6 +26,16 @@ class BootstrapForm::GroupTest < Minitest::Unit::TestCase
     builder.verify
   end
 
+  def test_number_field_delegates_to_builder
+    builder = Minitest::Mock.new
+    builder.expect :number_field, dont_care, [:attr, {key: 'value'}]
+    group = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
+
+    group.number_field key: 'value'
+
+    builder.verify
+  end
+
   def test_text_area_delegates_to_builder
     builder = Minitest::Mock.new
     builder.expect :text_area, dont_care, [:attr, {key: 'value'}]
