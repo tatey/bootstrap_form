@@ -17,8 +17,16 @@ class BootstrapForm::Group
     builder.label method, *args
   end
 
+  def email_field *args
+    builder.email_field method, *args
+  end
+
   def number_field *args
     builder.number_field method, *args
+  end
+
+  def password_field *args
+    builder.password_field method, *args
   end
 
   def text_area *args

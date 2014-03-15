@@ -26,12 +26,32 @@ class BootstrapForm::GroupTest < Minitest::Unit::TestCase
     builder.verify
   end
 
+  def test_email_field_delegates_to_builder
+    builder = Minitest::Mock.new
+    builder.expect :email_field, dont_care, [:attr, {key: 'value'}]
+    group = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
+
+    group.email_field key: 'value'
+
+    builder.verify
+  end
+
   def test_number_field_delegates_to_builder
     builder = Minitest::Mock.new
     builder.expect :number_field, dont_care, [:attr, {key: 'value'}]
     group = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
 
     group.number_field key: 'value'
+
+    builder.verify
+  end
+
+  def test_password_field_delegates_to_builder
+    builder = Minitest::Mock.new
+    builder.expect :password_field, dont_care, [:attr, {key: 'value'}]
+    group = BootstrapForm::Group.new builder: builder, method: :attr, template: dont_care
+
+    group.password_field key: 'value'
 
     builder.verify
   end
