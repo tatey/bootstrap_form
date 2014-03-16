@@ -21,6 +21,10 @@ class BootstrapForm::Group
     builder.email_field method, *args
   end
 
+  def file_field *args
+    builder.file_field method, *args
+  end
+
   def number_field *args
     builder.number_field method, *args
   end

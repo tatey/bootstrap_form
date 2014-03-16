@@ -49,6 +49,10 @@ The following HTML is rendered is if the form has errors:
 
 ## Changelog
 
+### 2014-03-16
+
+* Add `Group#file_field`
+
 ### 2014-03-15
 
 * Add `Group#email_field`
